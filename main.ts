@@ -147,6 +147,10 @@ function seviyeGec (seviye: number) {
             yeni_ev = sprites.create(assets.image`myImage11`, SpriteKind.bina)
             tiles.placeOnTile(yeni_ev, konum)
         }
+        for (let konum of tiles.getTilesByType(assets.tile`myTile13`)) {
+            terminal = sprites.create(assets.image`myImage3`, SpriteKind.bina)
+            tiles.placeOnTile(terminal, konum)
+        }
     }
 }
 tiles.onMapUnloaded(function (tilemap2) {
@@ -156,6 +160,7 @@ scene.onOverlapTile(SpriteKind.Player, sprites.castle.tilePath6, function (sprit
 	
 })
 let hareket = false
+let terminal: Sprite = null
 let yeni_orman: Sprite = null
 let yeni_ev: Sprite = null
 let emma: Sprite = null
