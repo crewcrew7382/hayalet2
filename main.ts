@@ -2,7 +2,7 @@ namespace SpriteKind {
     export const bina = SpriteKind.create()
 }
 scene.onOverlapTile(SpriteKind.Player, sprites.castle.tilePath4, function (sprite, location) {
-    game.over(true)
+	
 })
 controller.up.onEvent(ControllerButtonEvent.Pressed, function () {
     animation.runImageAnimation(
@@ -14,7 +14,7 @@ controller.up.onEvent(ControllerButtonEvent.Pressed, function () {
 })
 scene.onOverlapTile(SpriteKind.Player, sprites.castle.tilePath2, function (sprite, location) {
     if (game.runtime() > 10000) {
-        game.over(true)
+    	
     }
 })
 tiles.onMapLoaded(function (tilemap2) {
@@ -58,7 +58,7 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile2`, function (sprite, l
     guncelSeviye = 1
 })
 scene.onOverlapTile(SpriteKind.Player, sprites.castle.tilePath8, function (sprite, location) {
-    game.over(true)
+	
 })
 function seviyeGec (seviye: number) {
     tiles.loadMap(seviyeler[seviye])
@@ -69,6 +69,10 @@ function seviyeGec (seviye: number) {
             tiles.placeOnTile(yeni_ev, konum)
         }
         for (let konum of tiles.getTilesByType(assets.tile`myTile9`)) {
+            yeni_ev = sprites.create(assets.image`myImage7`, SpriteKind.bina)
+            tiles.placeOnTile(yeni_ev, konum)
+        }
+        for (let konum of tiles.getTilesByType(assets.tile`myTile10`)) {
             yeni_ev = sprites.create(assets.image`myImage7`, SpriteKind.bina)
             tiles.placeOnTile(yeni_ev, konum)
         }
@@ -139,13 +143,17 @@ function seviyeGec (seviye: number) {
                 `, SpriteKind.bina)
             tiles.placeOnTile(yeni_orman, konum)
         }
+        for (let konum of tiles.getTilesByType(assets.tile`myTile12`)) {
+            yeni_ev = sprites.create(assets.image`myImage11`, SpriteKind.bina)
+            tiles.placeOnTile(yeni_ev, konum)
+        }
     }
 }
 tiles.onMapUnloaded(function (tilemap2) {
     emma.destroy()
 })
 scene.onOverlapTile(SpriteKind.Player, sprites.castle.tilePath6, function (sprite, location) {
-    game.over(true)
+	
 })
 let hareket = false
 let yeni_orman: Sprite = null
